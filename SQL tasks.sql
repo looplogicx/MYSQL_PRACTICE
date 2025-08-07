@@ -58,3 +58,13 @@ select distinct department from employees;
 select department from employees where salary > 50000 group by department having count(*) > 1;
 
 -- task 6
+select * from  employees where emp_id = any
+(select emp_id from employees where salary > 50000 );
+
+select*from employees;
+
+insert into employees values(
+11, 'Abi', 'IT', null, 21);
+
+select emp_id, name, ifnull(salary, 70000) from employees;
+select *, ifnull(salary, 70000) from employees;
